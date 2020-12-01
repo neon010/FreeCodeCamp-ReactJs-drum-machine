@@ -10,7 +10,10 @@ class App extends React.Component{
     this.state = {
       drumpads1: bankOne,
       drumpads2:bankTwo,
-      bitsName: ""
+      bitsName: "Bit Name",
+      powerChecked: false,
+      //bank: one,
+      bankChecked: true
     }
     this.handleClick = this.handleClick.bind(this);
   }
@@ -22,33 +25,32 @@ class App extends React.Component{
     let audio = new Audio(event.target.childNodes[1].src);
     audio.play();
   }
+  handleChange(event){
+        console.log(!event.target.checked);
+  }
+
   render(){
     return (
       <div id="drum-machine">
-            <div id="display-drum">
-            {this.state.drumpads1.map(obj => {
-                return (<div className="drum-pad" id={obj.id} key={obj.id} onClick={this.handleClick}>
-                            {obj.keyTrigger}
-                            <audio className="clip" id={obj.keyTrigger} src={obj.url}></audio>
-                      </div>
-                      )
-              })}
+            <div className="App-title">
+              <h1 className="title">Drum Machine</h1>
             </div>
-            <div id="accsessory">
-            <div>
-              <label for="power" className="switch">Power</label>
-              <input type="checkbox" id="power" onChange={this.handleChange}/>
-              <span class="slider round"></span>
-            </div>
-            <div className="bitsName">
-              <h1>{this.state.bitsName}</h1>
-            </div>
-            <div>
-              <label for="bank" className="switch">Bank</label>
-              <input type="checkbox" id="bank"/>
-              <span class="slider round"></span>
-            </div>
-            </div>
+            <section className="main">
+              <div id="display-drum">
+              {this.state.drumpads1.map(obj => {
+                  return (<div className="drum-pad" id={obj.id} key={obj.id} onClick={this.handleClick}>
+                              {obj.keyTrigger}
+                              <audio className="clip" id={obj.keyTrigger} src={obj.url}></audio>
+                        </div>
+                        )
+                })}
+              </div>
+              <div id="accsessory">
+                  <div className="bitsName">
+                    <h1>{this.state.bitsName}</h1>
+                  </div>
+              </div>
+            </section>
       </div>
     )
   }

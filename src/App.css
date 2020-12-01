@@ -1,20 +1,47 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body{
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: indigo;
 }
 #drum-machine{
-  width: 500px;
-  height: 300px;
+  width: 550px;
+  height: 260px;
   display: flex;
+  flex-direction: column;
+  background-color: black;
+  box-shadow: 5px 5px 4px #000;
+  border-radius: 4px;
 }
 #display-drum{
+  margin-left: 10px;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(3,minmax(20px,100px));
   grid-template-rows: 60px 60px 60px;
   grid-gap: 5px;
   margin-top: 5px;
+  box-shadow: 5px 5px 2px;
+  border-radius: 5px;
+}
+.App-title{
+  /*background-color: aqua;*/
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+  color: red;
+}
+.main{
+  margin-top: 5px;
+  display: flex;
 }
 .drum-pad{
   background-color: brown;
@@ -24,10 +51,20 @@ body{
   align-items: center;
 }
 .bitsName{
-
   background-color: grey;
+  color: aqua;
+  width: 175px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
 }
 #accsessory{
+  width: 200px;
+  height: 195px;
   margin-left: 20px;
-  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
